@@ -35,6 +35,18 @@ const middleware = [
 
 middleware.forEach((it) => server.use(it))
 
+
+server.get('/api/v1/repos', (req, res) => {
+
+  const data = [
+    {id:12,name:"asdas"},
+  ]
+
+
+  res.json(data)
+
+})
+
 server.use('/api/', (req, res) => {
   res.status(404)
   res.end()
