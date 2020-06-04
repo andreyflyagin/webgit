@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './main.scss'
+// import './my-main.scss'
 import { useHistory } from 'react-router-dom'
 
 // import wave from '../assets/images/wave.jpg'

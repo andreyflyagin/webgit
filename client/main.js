@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import Root from './config/root'
 
-import './assets/scss/main.scss'
+import './assets/scss/main1.scss'
 
 const target = document.getElementById('root')
 
