@@ -8,14 +8,20 @@ import React from 'react'
 
 import cookieParser from 'cookie-parser'
 import config from './config'
-
 import Html from '../client/html'
 
-let Root = () => ''
+const Root = () => ''
 
 try {
   // eslint-disable-next-line import/no-unresolved
-  Root = require('../dist/assets/js/root.bundle')
+  // ;(async () => {
+  //   const items = await import('../dist/assets/js/root.bundle')
+  //   console.log(JSON.stringify(items))
+
+  //   Root = (props) => <items.Root {...props} />
+  //   console.log(JSON.stringify(items.Root))
+  // })()
+  console.log(Root)
 } catch (ex) {
   console.log(' run yarn build:prod to enable ssr')
 }
@@ -34,18 +40,6 @@ const middleware = [
 ]
 
 middleware.forEach((it) => server.use(it))
-
-
-server.get('/api/v1/repos', (req, res) => {
-
-  const data = [
-    {id:12,name:"asdas"},
-  ]
-
-
-  res.json(data)
-
-})
 
 server.use('/api/', (req, res) => {
   res.status(404)
