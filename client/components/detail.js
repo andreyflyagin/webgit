@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {useParams, Link} from 'react-router-dom'
-import axios from "axios";
+import axios from "axios"
+import ReactMarkdown from 'react-markdown'
 import RepoHeader from './repo-header'
 
 
@@ -22,10 +23,10 @@ const Detail = () => {
         <div>
             <div>
                 <RepoHeader title={userName} />
-                <Link to={url}>список</Link>
+                <Link to={url} id='go-repository-list'>список</Link>
             </div>
             <div id='description'>
-                {content}
+                <ReactMarkdown source={content} />
             </div>
         </div>
     )
